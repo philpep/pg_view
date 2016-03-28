@@ -1,0 +1,26 @@
+Source: pgview
+Maintainer: Philippe Pepiot <phil@philpep.org>
+Section: python
+Priority: optional
+Build-Depends:
+    debhelper (>= 9),
+    python-all,
+    python-setuptools,
+	python-psycopg2,
+Homepage: https://github.com/zalando/pg_view
+Vcs-Browser: https://github.com/zalando/pg_view
+Vcs-Git: https://github.com/zalando/pg_view
+Standards-Version: 3.9.6
+
+Package: python-pgview
+Architecture: all
+Depends:
+	python-psycopg2,
+    ${misc:Depends},
+    ${python:Depends}
+Recommends: ${python:Recommends}
+Description: PostgreSQL Activity View Utility
+ pg_view is a command-line tool to display the state to the PostgreSQL
+ processes. It shows the per-process statistics combined with
+ pg_stat_activity output for the processes that have the rows there,
+ global system stats, per-partition information and the memory stats.

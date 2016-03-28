@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+PYTHONS:=$(shell pyversions -vr)
+
+DEBVERS ?= $(shell dpkg-parsechangelog | sed -n -e 's/^Version: //p')
+VERSION ?= $(shell echo '$(DEBVERS)' | sed -e 's/^[[:digit:]]*://' -e 's/[-].*//')
+
+%:
+	dh $@ --buildsystem=python_distutils --with python2
+
+
+override_dh_auto_install:
+	set -e && for pyvers in $(PYTHONS); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/python-pgview; \
+	done

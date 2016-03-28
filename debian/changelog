@@ -1,0 +1,5 @@
+pgview (1.3.0-1) unstable; urgency=medium
+
+  * Initial debianization
+
+ -- Philippe Pepiot <phil@philpep.org>  Mon, 28 Mar 2016 14:29:21 +0200
