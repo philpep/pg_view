@@ -6,7 +6,7 @@ Build-Depends:
     debhelper (>= 9),
     python-all,
     python-setuptools,
-	python-psycopg2,
+    python-psycopg2,
 Homepage: https://github.com/zalando/pg_view
 Vcs-Browser: https://github.com/zalando/pg_view
 Vcs-Git: https://github.com/zalando/pg_view
@@ -15,7 +15,8 @@ Standards-Version: 3.9.6
 Package: python-pgview
 Architecture: all
 Depends:
-	python-psycopg2,
+    python-psycopg2,
+    python-setuptools,
     ${misc:Depends},
     ${python:Depends}
 Recommends: ${python:Recommends}
